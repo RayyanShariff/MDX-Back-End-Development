@@ -29,6 +29,7 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* input */
 #new-todo {
     width: 70%;
     padding: 8px;
@@ -63,4 +64,9 @@ button:hover {
     border-radius: 5px;
     margin-bottom: 10px;
     text-align: left;
+}
+
+input[type="checkbox"] {
+    margin-right: 100px;
+  
 }

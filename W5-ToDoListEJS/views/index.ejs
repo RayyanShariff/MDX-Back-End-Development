@@ -14,13 +14,13 @@
             <button type="submit">Add</button>
         </form>
         <% if(locals.data){ %>
-            <div>
-                <ul id="todo-list">
-                <% data.forEach(t => {%>
-                    <li><%=t%></li>
-                <% }); %>
-                </ul>
-            </div>
+            <ul id="todo-list">
+            <% data.forEach(t => {%>
+                <li>
+                    <input type="checkbox"><%=t%>
+                </li>
+            <% }); %>
+            </ul>
         <% }%>
     </div>
 </body>
