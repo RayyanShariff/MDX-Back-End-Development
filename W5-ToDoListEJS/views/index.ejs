@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="todo-container">
+        <h2>To Do List</h2>
+        <form action="/" method="post" id="todo-form">
+            <input type="text" id="new-todo" name="newTask" placeholder="Enter new to-do item">
+            <button type="submit">Add</button>
+        </form>
+        <% if(locals.data){ %>
+            <div>
+                <ul id="todo-list">
+                <% data.forEach(t => {%>
+                    <li><%=t%></li>
+                <% }); %>
+                </ul>
+            </div>
+        <% }%>
+    </div>
+</body>
+</html>
