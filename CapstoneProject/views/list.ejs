@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="stylesheet" href="../list.css">
+</head>
+<body>
+    <% if(locals.list){ %>
+        <div id="todo-form">
+            <h1><%= listName %></h1>
+            <form action="/addTask" method="POST" class="formList">
+                <input type="text" id="new-todo" required name="task" placeholder="Enter new to-do item">
+                <button type="submit" name="list" value="<%= listName %>" class="listSubmit">Add</button>
+            </form>
+            <ul style="list-style-type: none;">
+                <% list[0].tasks.forEach(function(element) { %>
+                    <li>
+                        <input type="checkbox" name="checkbox">
+                        <span><%= element.task %></span>
+                    </li>
+                <% }); %>
+            </ul>
+            <form action="/back" method="post">
+                <!-- <button class="listSubmit" type="submit" name="btn" value="Home">Back</button> -->
+            </form>
+        </div>
+    <% } %>
+</body>
+</html>
